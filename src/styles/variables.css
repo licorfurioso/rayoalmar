@@ -1,0 +1,60 @@
+:root {
+  /* Colors - Minimal, professional palette */
+  --color-background: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #666666;
+  --color-accent: #2c2c2c;
+  --color-border: #e0e0e0;
+  --color-hover: #000000;
+
+  /* Spacing scale */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 4rem; /* 64px */
+  --space-2xl: 6rem; /* 96px */
+
+  /* Typography */
+  --font-family-base:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-heading: 'Georgia', serif;
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 2rem; /* 32px */
+  --font-size-3xl: 3rem; /* 48px */
+
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-base: 1.5;
+  --line-height-loose: 1.8;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+
+  /* Breakpoints (for reference in JS) */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1025px;
+
+  /* Layout */
+  --max-width-container: 1200px;
+  --header-height: 80px;
+}
+
+/* Media queries for responsive typography */
+@media (min-width: 768px) {
+  :root {
+    --font-size-base: 1.125rem; /* 18px on tablet+ */
+    --font-size-xl: 2rem; /* 32px on tablet+ */
+    --font-size-2xl: 2.5rem; /* 40px on tablet+ */
+    --font-size-3xl: 4rem; /* 64px on tablet+ */
+  }
+}

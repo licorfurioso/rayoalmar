@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.claude/*
+agent-os/*
+IMPLEMENTATION_SUMMARY.md
+CHECKLIST.md

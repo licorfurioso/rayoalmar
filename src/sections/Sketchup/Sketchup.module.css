@@ -1,0 +1,23 @@
+.section {
+  min-height: 400px;
+  padding: var(--space-2xl) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  max-width: var(--max-width-container);
+  width: 100%;
+  text-align: center;
+}
+
+.content h2 {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-xl) var(--space-md);
+  }
+}
