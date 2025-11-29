@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 import type { CarouselProps } from '../../types/content';
-import { SkeletonImage } from '../SkeletonImage/SkeletonImage';
 import styles from './Carousel.module.css';
 
 // Import Swiper styles
@@ -11,12 +9,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export const Carousel = ({ data, category = 'Gallery' }: CarouselProps) => {
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-
-  const handleImageLoad = (imageUrl: string) => {
-    setLoadedImages((prev) => new Set(prev).add(imageUrl));
-  };
-
   return (
     <div className={styles.carouselContainer} role="region" aria-label={`${category} carousel`}>
       <Swiper
@@ -45,15 +37,11 @@ export const Carousel = ({ data, category = 'Gallery' }: CarouselProps) => {
         {data.map((item) => (
           <SwiperSlide key={item.id} className={styles.slide}>
             <div className={styles.imageWrapper}>
-              {!loadedImages.has(item.imageUrl) && (
-                <SkeletonImage className={styles.skeleton} />
-              )}
               <img
                 src={item.imageUrl}
                 alt={item.title}
                 loading="lazy"
-                className={`${styles.image} ${loadedImages.has(item.imageUrl) ? styles.loaded : styles.loading}`}
-                onLoad={() => handleImageLoad(item.imageUrl)}
+                className={styles.image}
               />
             </div>
             <div className={styles.caption}>
