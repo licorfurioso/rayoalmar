@@ -1,0 +1,56 @@
+.playerContainer {
+  width: 100%;
+  padding: var(--space-lg) 0;
+}
+
+.playerWrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.caption {
+  padding: var(--space-lg) 0;
+  text-align: left;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+  .playerContainer {
+    padding: var(--space-md) 0;
+  }
+
+  .caption {
+    padding: var(--space-md) 0;
+  }
+
+  .title {
+    font-size: var(--font-size-lg);
+  }
+
+  .description {
+    font-size: var(--font-size-sm);
+  }
+}
+

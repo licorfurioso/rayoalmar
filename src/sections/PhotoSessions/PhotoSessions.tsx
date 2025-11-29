@@ -1,6 +1,13 @@
+import { Carousel } from '../../components/Carousel/Carousel';
+import type { ContentItem } from '../../types/content';
+import photoSessionsDataRaw from '../../data/photoSessions.json';
 import styles from './PhotoSessions.module.css';
 
 export const PhotoSessions = () => {
+  // Type assertion and sort data by order property
+  const photoSessionsData = photoSessionsDataRaw as ContentItem[];
+  const sortedData = [...photoSessionsData].sort((a, b) => a.order - b.order);
+
   return (
     <section
       id="photo-sessions"
@@ -9,7 +16,7 @@ export const PhotoSessions = () => {
     >
       <div className={styles.content}>
         <h2>Photo Sessions</h2>
-        <p>Content Coming Soon</p>
+        <Carousel data={sortedData} category="Photo Sessions" />
       </div>
     </section>
   );
