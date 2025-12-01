@@ -84,6 +84,101 @@ npm run dev
 - `npm run test:coverage` - Generate test coverage report
 - `npm run deploy` - Deploy to GitHub Pages
 
+## 🧪 Testing
+
+This project uses Vitest and React Testing Library for comprehensive test coverage.
+
+### Running Tests
+
+**Run all tests:**
+```bash
+npm run test
+```
+
+**Run tests in watch mode (for development):**
+```bash
+npm run test -- --watch
+```
+
+**Run tests with UI:**
+```bash
+npm run test:ui
+```
+
+**Generate coverage report:**
+```bash
+npm run test:coverage
+```
+
+The coverage report will be available in:
+- Terminal output (text format)
+- `coverage/index.html` (detailed HTML report)
+
+### Test Structure
+
+Tests are organized alongside their source files:
+- **Component tests**: `src/components/[Component]/[Component].test.tsx`
+- **Section tests**: `src/sections/[Section]/[Section].test.tsx`
+- **Hook tests**: `src/hooks/[hookName].test.ts`
+- **Integration tests**: `src/tests/[feature].test.tsx`
+- **Mock fixtures**: `src/tests/fixtures/`
+
+### Writing New Tests
+
+Follow these patterns when writing tests:
+
+1. **Component Tests** - Test rendering and basic interactions:
+```typescript
+import { render, screen } from '@testing-library/react';
+import { MyComponent } from './MyComponent';
+
+it('renders component with props', () => {
+  render(<MyComponent title="Test" />);
+  expect(screen.getByText('Test')).toBeInTheDocument();
+});
+```
+
+2. **Hook Tests** - Use `renderHook` utility:
+```typescript
+import { renderHook } from '@testing-library/react';
+import { useMyHook } from './useMyHook';
+
+it('returns expected values', () => {
+  const { result } = renderHook(() => useMyHook());
+  expect(result.current).toBeTruthy();
+});
+```
+
+3. **Integration Tests** - Test multiple components working together:
+```typescript
+import { render, fireEvent } from '@testing-library/react';
+import App from '../App';
+
+it('navigation works correctly', () => {
+  render(<App />);
+  // Test user workflows
+});
+```
+
+### Mock Data Fixtures
+
+Use mock fixtures in tests to avoid coupling with production data:
+
+```typescript
+import { mockPhotoSessions } from '../../tests/fixtures';
+
+// Use in tests
+<Grid data={mockPhotoSessions} />
+```
+
+Fixtures are located in `src/tests/fixtures/` and mirror the structure of production data.
+
+### Coverage Goals
+
+- **Target**: 80% coverage for lines, branches, functions, and statements
+- **CI/CD**: Tests run automatically on all pull requests
+- **Coverage check**: Build fails if coverage drops below 80%
+
 ## Design System
 
 The project uses a comprehensive design system with CSS custom properties:
