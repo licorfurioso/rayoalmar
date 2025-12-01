@@ -12,7 +12,7 @@ export const VideoPlayer = ({ videoUrl, title, description }: VideoPlayerProps) 
             controls: true,
             width: '100%',
             height: '100%',
-          } as any)}
+          })}
         />
       </div>
       {(title || description) && (

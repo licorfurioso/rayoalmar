@@ -9,7 +9,7 @@ declare module 'react-i18next' {
       common: Record<string, string>;
       navigation: Record<string, string>;
       sections: Record<string, string>;
-      content: Record<string, any>;
+      content: Record<string, string>;
     };
   }
 }

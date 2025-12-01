@@ -19,8 +19,10 @@ export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
 
     // If reduced motion is preferred, show immediately
     if (prefersReducedMotion) {
-      setIsVisible(true);
-      return;
+      requestAnimationFrame(() => {
+        setIsVisible(true);
+        return;
+      });
     }
 
     const observer = new IntersectionObserver(
