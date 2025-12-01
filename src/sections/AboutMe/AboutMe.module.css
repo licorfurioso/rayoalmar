@@ -9,15 +9,176 @@
 .content {
   max-width: var(--max-width-container);
   width: 100%;
-  text-align: center;
 }
 
 .content h2 {
   text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.photoContainer {
+  width: 100%;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.bioText {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.ctaText {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--color-text);
+  font-weight: 500;
+  margin: 0;
+}
+
+.contactSection {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.contactHeading {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.emailLink {
+  display: inline-block;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-sm) 0;
+  transition: color var(--transition-fast);
+  border-bottom: 2px solid transparent;
+}
+
+.emailLink:hover {
+  color: var(--color-hover);
+  border-bottom-color: var(--color-hover);
+}
+
+.emailLink:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  border-radius: 8px;
+}
+
+.socialLink:hover {
+  color: var(--color-hover);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 1024px) {
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .photoContainer {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .textContainer {
+    text-align: center;
+  }
+
+  .contactSection {
+    text-align: center;
+  }
+
+  .emailLink {
+    display: block;
+  }
+
+  .socialLinks {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 767px) {
   .section {
     padding: var(--space-xl) var(--space-md);
+  }
+
+  .content h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .aboutContainer {
+    gap: var(--space-lg);
+  }
+
+  .photoContainer {
+    max-width: 300px;
+  }
+
+  .bioText,
+  .ctaText {
+    font-size: var(--font-size-sm);
+  }
+
+  .contactHeading {
+    font-size: var(--font-size-base);
+  }
+
+  .emailLink {
+    font-size: var(--font-size-sm);
+    word-break: break-word;
   }
 }
