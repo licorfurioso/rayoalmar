@@ -16,15 +16,6 @@ export interface ContentItem {
   order: number;
 }
 
-/**
- * Props for the Carousel component
- */
-export interface CarouselProps {
-  /** Array of content items to display in the carousel */
-  data: ContentItem[];
-  /** Optional category name for accessibility labels */
-  category?: string;
-}
 
 /**
  * Props for the VideoPlayer component

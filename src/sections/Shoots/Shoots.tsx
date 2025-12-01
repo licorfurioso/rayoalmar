@@ -1,4 +1,4 @@
-import { Carousel } from '../../components/Carousel/Carousel';
+import { Grid } from '../../components/Grid/Grid';
 import type { ContentItem } from '../../types/content';
 import shootsDataRaw from '../../data/shoots.json';
 import styles from './Shoots.module.css';
@@ -12,7 +12,7 @@ export const Shoots = () => {
     <section id="shoots" className={styles.section} aria-label="Shoots">
       <div className={styles.content}>
         <h2>Shoots</h2>
-        <Carousel data={sortedData} category="Shoots" />
+        <Grid data={sortedData} category="Shoots" />
       </div>
     </section>
   );

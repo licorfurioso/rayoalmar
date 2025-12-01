@@ -1,4 +1,4 @@
-import { Carousel } from '../../components/Carousel/Carousel';
+import { Grid } from '../../components/Grid/Grid';
 import type { ContentItem } from '../../types/content';
 import photoSessionsDataRaw from '../../data/photoSessions.json';
 import styles from './PhotoSessions.module.css';
@@ -16,7 +16,7 @@ export const PhotoSessions = () => {
     >
       <div className={styles.content}>
         <h2>Photo Sessions</h2>
-        <Carousel data={sortedData} category="Photo Sessions" />
+        <Grid data={sortedData} category="Photo Sessions" />
       </div>
     </section>
   );

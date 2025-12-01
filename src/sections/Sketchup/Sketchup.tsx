@@ -1,4 +1,4 @@
-import { Carousel } from '../../components/Carousel/Carousel';
+import { Grid } from '../../components/Grid/Grid';
 import type { ContentItem } from '../../types/content';
 import sketchupDataRaw from '../../data/sketchup.json';
 import styles from './Sketchup.module.css';
@@ -16,7 +16,7 @@ export const Sketchup = () => {
     >
       <div className={styles.content}>
         <h2>Sketchup</h2>
-        <Carousel data={sortedData} category="Sketchup" />
+        <Grid data={sortedData} category="Sketchup" />
       </div>
     </section>
   );
