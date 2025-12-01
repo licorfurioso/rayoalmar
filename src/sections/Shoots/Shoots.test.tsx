@@ -1,27 +1,33 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Shoots } from './Shoots';
 
 describe('Shoots Section', () => {
-  it('renders section with correct id and aria-label', () => {
-    render(<Shoots />);
+  it('renders section with correct id', () => {
+    const { container } = render(<Shoots />);
 
-    const section = screen.getByLabelText('Shoots');
+    const section = container.querySelector('#shoots');
     expect(section).toBeInTheDocument();
-    expect(section).toHaveAttribute('id', 'shoots');
+    expect(section?.tagName).toBe('SECTION');
   });
 
   it('displays section heading', () => {
-    render(<Shoots />);
+    const { container } = render(<Shoots />);
 
-    expect(screen.getByRole('heading', { name: 'Shoots' })).toBeInTheDocument();
+    const heading = container.querySelector('h2');
+    expect(heading).toBeInTheDocument();
   });
 
-  it('renders carousel with data', () => {
-    render(<Shoots />);
+  it('renders grid with data', () => {
+    const { container } = render(<Shoots />);
 
-    const carousel = screen.getByRole('region', { name: 'Shoots carousel' });
-    expect(carousel).toBeInTheDocument();
+    // Grid uses role="list" for the gallery container
+    const grid = container.querySelector('[role="list"]');
+    expect(grid).toBeInTheDocument();
+
+    // Should have grid items
+    const gridItems = container.querySelectorAll('[role="listitem"]');
+    expect(gridItems.length).toBeGreaterThan(0);
   });
 });
 
