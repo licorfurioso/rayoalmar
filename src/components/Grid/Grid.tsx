@@ -65,7 +65,8 @@ export const Grid = ({ data, category }: GridProps) => {
                   onLoad={() => handleImageLoad(item.id)}
                   onError={() => handleImageError(item.id)}
                   style={{
-                    display: loadedImages.has(String(item.id)) ? 'block' : 'none',
+                    opacity: loadedImages.has(String(item.id)) ? 1 : 0,
+                    visibility: loadedImages.has(String(item.id)) ? 'visible' : 'hidden',
                   }}
                 />
               ) : (
