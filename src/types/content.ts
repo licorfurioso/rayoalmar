@@ -23,7 +23,7 @@ export interface VideoPlayerProps {
   /** URL path to the video file */
   videoUrl: string;
   /** Title of the video */
-  title: string;
+  title?: string;
   /** Optional description of the video */
   description?: string;
 }

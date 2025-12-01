@@ -23,4 +23,42 @@ describe('i18n Configuration', () => {
     expect(i18n.options.supportedLngs).toContain('en');
     expect(i18n.options.supportedLngs).toContain('es');
   });
+
+  it('has correct backend loadPath configuration', () => {
+    expect((i18n.options.backend as any)?.loadPath).toBe(
+      '/rayoalmar/locales/{{lng}}/{{ns}}.json'
+    );
+  });
+
+  it('has debug mode configured based on environment', () => {
+    // Debug is enabled in dev/test environments
+    expect(typeof i18n.options.debug).toBe('boolean');
+  });
+
+  it('has react suspense enabled', () => {
+    expect(i18n.options.react?.useSuspense).toBe(true);
+  });
+
+  it('has correct namespaces configured', () => {
+    expect(i18n.options.ns).toEqual([
+      'common',
+      'navigation',
+      'sections',
+      'content',
+    ]);
+    expect(i18n.options.defaultNS).toBe('common');
+  });
+
+  it('has interpolation escapeValue set to false for React', () => {
+    expect(i18n.options.interpolation?.escapeValue).toBe(false);
+  });
+
+  it('has correct detection order', () => {
+    expect(i18n.options.detection?.order).toEqual([
+      'localStorage',
+      'navigator',
+    ]);
+    expect(i18n.options.detection?.caches).toEqual(['localStorage']);
+    expect(i18n.options.detection?.lookupLocalStorage).toBe('i18nextLng');
+  });
 });

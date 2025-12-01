@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
@@ -29,6 +29,11 @@ testI18n.use(initReactI18next).init({
 });
 
 describe('Header Component', () => {
+  beforeEach(() => {
+    // Reset window.scrollTo mock before each test
+    window.scrollTo = vi.fn();
+  });
+
   it('renders site title "Flor Guzman"', () => {
     render(
       <I18nextProvider i18n={testI18n}>
@@ -81,5 +86,79 @@ describe('Header Component', () => {
 
     expect(screen.getByText('EN')).toBeInTheDocument();
     expect(screen.getByText('ES')).toBeInTheDocument();
+  });
+
+  it('handles navigation click when target element exists', () => {
+    // Create a mock element with getBoundingClientRect
+    const mockElement = document.createElement('section');
+    mockElement.id = 'photo-sessions';
+    mockElement.getBoundingClientRect = vi.fn(() => ({
+      top: 500,
+      bottom: 1000,
+      left: 0,
+      right: 1000,
+      width: 1000,
+      height: 500,
+      x: 0,
+      y: 500,
+      toJSON: () => {},
+    }));
+    document.body.appendChild(mockElement);
+
+    // Mock window properties
+    Object.defineProperty(window, 'pageYOffset', {
+      writable: true,
+      value: 100,
+    });
+
+    render(
+      <I18nextProvider i18n={testI18n}>
+        <Header />
+      </I18nextProvider>
+    );
+
+    const photoSessionsLink = screen.getByText('Photo Sessions');
+    fireEvent.click(photoSessionsLink);
+
+    expect(window.scrollTo).toHaveBeenCalledWith({
+      top: 520, // 500 (top) + 100 (pageYOffset) - 80 (headerOffset)
+      behavior: 'smooth',
+    });
+
+    // Cleanup
+    document.body.removeChild(mockElement);
+  });
+
+  it('handles navigation click when target element does not exist', () => {
+    render(
+      <I18nextProvider i18n={testI18n}>
+        <Header />
+      </I18nextProvider>
+    );
+
+    const photoSessionsLink = screen.getByText('Photo Sessions');
+    fireEvent.click(photoSessionsLink);
+
+    // scrollTo should not be called when element doesn't exist
+    expect(window.scrollTo).not.toHaveBeenCalled();
+  });
+
+  it('prevents default navigation behavior', () => {
+    render(
+      <I18nextProvider i18n={testI18n}>
+        <Header />
+      </I18nextProvider>
+    );
+
+    const photoSessionsLink = screen.getByText('Photo Sessions');
+    const clickEvent = new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+    });
+    const preventDefaultSpy = vi.spyOn(clickEvent, 'preventDefault');
+
+    photoSessionsLink.dispatchEvent(clickEvent);
+
+    expect(preventDefaultSpy).toHaveBeenCalled();
   });
 });
