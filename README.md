@@ -4,21 +4,12 @@
 
 A modern, minimal portfolio website for Flor Guzman showcasing photography, shoots, sketchup drawings, and personal information.
 
-## 🚀 Live Demo
+## Live Demo
 
 Visit the live site: [https://rayoalmar.com](https://rayoalmar.com)
 
-## ✨ Features
 
-- **Pop-up Header Navigation**: Auto-hide/reveal header on user interaction
-- **Smooth Scrolling**: Seamless navigation between sections
-- **Active Section Highlighting**: Visual feedback showing current section in view
-- **Responsive Design**: Mobile-first design that works on all devices (320px+)
-- **Minimal, Modern Aesthetic**: Clean design with generous whitespace
-- **Accessibility**: Semantic HTML, ARIA labels, keyboard navigation support
-- **Automated Deployment**: CI/CD pipeline with GitHub Actions
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: React 19+ with TypeScript 5+
 - **Build Tool**: Vite 7+
@@ -28,7 +19,7 @@ Visit the live site: [https://rayoalmar.com](https://rayoalmar.com)
 - **Deployment**: GitHub Pages
 - **CI/CD**: GitHub Actions
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 rayoalmar/
@@ -55,7 +46,7 @@ rayoalmar/
 └── package.json
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -93,7 +84,7 @@ npm run dev
 - `npm run test:coverage` - Generate test coverage report
 - `npm run deploy` - Deploy to GitHub Pages
 
-## 🎨 Design System
+## Design System
 
 The project uses a comprehensive design system with CSS custom properties:
 
@@ -121,7 +112,7 @@ The project uses a comprehensive design system with CSS custom properties:
 - Tablet: 768px - 1024px
 - Desktop: 1025px+
 
-## 🧪 Testing
+## Testing
 
 The project uses Vitest and React Testing Library for testing. Tests are focused on critical user workflows:
 
@@ -135,7 +126,7 @@ Run tests with:
 npm run test
 ```
 
-## 🚢 Deployment
+## Deployment
 
 The project is configured for automated deployment to GitHub Pages:
 
@@ -155,7 +146,7 @@ The GitHub Actions workflow runs on every push and pull request:
 - **CI Job**: Lints, formats, and builds the project
 - **Deploy Job**: Deploys to GitHub Pages (only on main branch)
 
-## 🎯 Future Enhancements
+## Future Enhancements
 
 - Add real content to all sections
 - Implement image galleries with lightbox
@@ -164,17 +155,13 @@ The GitHub Actions workflow runs on every push and pull request:
 - Add animations and transitions
 - Integrate with a CMS for content management
 
-## 📝 Architecture Decisions
+## Architecture Decisions
 
 - **CSS Modules**: Scoped styling to prevent conflicts
 - **Custom Hooks**: Reusable logic for header visibility and active section tracking
 - **IntersectionObserver**: Efficient viewport tracking for active sections
 - **Mobile-first**: Progressive enhancement from mobile to desktop
 - **Semantic HTML**: Proper use of HTML5 elements for accessibility
-
-## 🤝 Contributing
-
-This is a personal portfolio project. For suggestions or bug reports, please open an issue.
 
 ## 📄 License
 
