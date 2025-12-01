@@ -16,8 +16,11 @@ function App() {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Header activeSection={activeSection} />
-      <main className="app">
+      <main id="main-content" className="app">
         <PhotoSessions />
         <Shoots />
         <Sketchup />

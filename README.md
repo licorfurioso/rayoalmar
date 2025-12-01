@@ -6,7 +6,7 @@ A modern, minimal portfolio website for Flor Guzman showcasing photography, shoo
 
 ## 🚀 Live Demo
 
-Visit the live site: [https://username.github.io/rayoalmar/](https://username.github.io/rayoalmar/)
+Visit the live site: [https://rayoalmar.com](https://rayoalmar.com)
 
 ## ✨ Features
 
