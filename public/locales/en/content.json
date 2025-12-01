@@ -1,0 +1,68 @@
+{
+  "photoSessions": {
+    "ps-1": {
+      "title": "Portrait Session 2024",
+      "description": "Professional portrait photography session"
+    },
+    "ps-2": {
+      "title": "Family Moments",
+      "description": "Capturing precious family memories"
+    },
+    "ps-3": {
+      "title": "Outdoor Session",
+      "description": "Natural light outdoor photography"
+    },
+    "ps-4": {
+      "title": "Studio Portraits",
+      "description": "Professional studio portrait session"
+    },
+    "ps-5": {
+      "title": "Lifestyle Photography",
+      "description": "Candid lifestyle photo session"
+    }
+  },
+  "shoots": {
+    "shoot-1": {
+      "title": "Commercial Shoot",
+      "description": "Professional commercial photography"
+    },
+    "shoot-2": {
+      "title": "Editorial Fashion",
+      "description": "Fashion editorial shoot for magazine"
+    },
+    "shoot-3": {
+      "title": "Product Photography",
+      "description": "High-end product photography"
+    },
+    "shoot-4": {
+      "title": "Event Coverage",
+      "description": "Professional event photography"
+    },
+    "shoot-5": {
+      "title": "Artistic Concept",
+      "description": "Creative concept photography shoot"
+    }
+  },
+  "sketchup": {
+    "sketch-1": {
+      "title": "Architectural Design",
+      "description": "Modern architectural visualization"
+    },
+    "sketch-2": {
+      "title": "Interior Concept",
+      "description": "Interior design rendering"
+    },
+    "sketch-3": {
+      "title": "Urban Planning",
+      "description": "Urban development visualization"
+    },
+    "sketch-4": {
+      "title": "Landscape Design",
+      "description": "Landscape architecture rendering"
+    },
+    "sketch-5": {
+      "title": "3D Modeling",
+      "description": "Detailed 3D architectural model"
+    }
+  }
+}

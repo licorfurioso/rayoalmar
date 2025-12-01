@@ -1,0 +1,69 @@
+{
+  "photoSessions": {
+    "ps-1": {
+      "title": "Sesión de Retrato 2024",
+      "description": "Sesión profesional de fotografía de retratos"
+    },
+    "ps-2": {
+      "title": "Momentos Familiares",
+      "description": "Capturando preciosos recuerdos familiares"
+    },
+    "ps-3": {
+      "title": "Sesión al Aire Libre",
+      "description": "Fotografía con luz natural al aire libre"
+    },
+    "ps-4": {
+      "title": "Retratos de Estudio",
+      "description": "Sesión profesional de retratos en estudio"
+    },
+    "ps-5": {
+      "title": "Fotografía de Estilo de Vida",
+      "description": "Sesión de fotos espontáneas de estilo de vida"
+    }
+  },
+  "shoots": {
+    "shoot-1": {
+      "title": "Producción Comercial",
+      "description": "Fotografía comercial profesional"
+    },
+    "shoot-2": {
+      "title": "Moda Editorial",
+      "description": "Producción de moda editorial para revista"
+    },
+    "shoot-3": {
+      "title": "Fotografía de Producto",
+      "description": "Fotografía de producto de alta gama"
+    },
+    "shoot-4": {
+      "title": "Cobertura de Eventos",
+      "description": "Fotografía profesional de eventos"
+    },
+    "shoot-5": {
+      "title": "Concepto Artístico",
+      "description": "Producción fotográfica de concepto creativo"
+    }
+  },
+  "sketchup": {
+    "sketch-1": {
+      "title": "Diseño Arquitectónico",
+      "description": "Visualización arquitectónica moderna"
+    },
+    "sketch-2": {
+      "title": "Concepto de Interior",
+      "description": "Renderizado de diseño interior"
+    },
+    "sketch-3": {
+      "title": "Planificación Urbana",
+      "description": "Visualización de desarrollo urbano"
+    },
+    "sketch-4": {
+      "title": "Diseño de Paisaje",
+      "description": "Renderizado de arquitectura paisajística"
+    },
+    "sketch-5": {
+      "title": "Modelado 3D",
+      "description": "Modelo arquitectónico 3D detallado"
+    }
+  }
+}
+

@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -5,6 +7,8 @@ interface HeaderProps {
 }
 
 export const Header = ({ activeSection }: HeaderProps) => {
+  const { t } = useTranslation('navigation');
+
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
@@ -38,7 +42,7 @@ export const Header = ({ activeSection }: HeaderProps) => {
                   activeSection === 'photo-sessions' ? styles.active : ''
                 }
               >
-                Photo Sessions
+                {t('photoSessions')}
               </a>
             </li>
             <li>
@@ -47,7 +51,7 @@ export const Header = ({ activeSection }: HeaderProps) => {
                 onClick={(e) => handleNavClick(e, 'shoots')}
                 className={activeSection === 'shoots' ? styles.active : ''}
               >
-                Shoots
+                {t('shoots')}
               </a>
             </li>
             <li>
@@ -56,7 +60,7 @@ export const Header = ({ activeSection }: HeaderProps) => {
                 onClick={(e) => handleNavClick(e, 'sketchup')}
                 className={activeSection === 'sketchup' ? styles.active : ''}
               >
-                Sketchup
+                {t('sketchup')}
               </a>
             </li>
             <li>
@@ -65,11 +69,12 @@ export const Header = ({ activeSection }: HeaderProps) => {
                 onClick={(e) => handleNavClick(e, 'about-me')}
                 className={activeSection === 'about-me' ? styles.active : ''}
               >
-                About Me
+                {t('aboutMe')}
               </a>
             </li>
           </ul>
         </nav>
+        <LanguageSwitcher />
       </div>
     </header>
   );
