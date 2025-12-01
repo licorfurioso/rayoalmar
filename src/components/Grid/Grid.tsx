@@ -12,9 +12,16 @@ interface GridProps {
 export const Grid = ({ data, category }: GridProps) => {
   const { t } = useTranslation('content');
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const [errorImages, setErrorImages] = useState<Set<string>>(new Set());
 
   const handleImageLoad = (id: string | number) => {
     setLoadedImages((prev) => new Set(prev).add(String(id)));
+  };
+
+  const handleImageError = (id: string | number) => {
+    setErrorImages((prev) => new Set(prev).add(String(id)));
+    setLoadedImages((prev) => new Set(prev).add(String(id))); // Mark as "loaded" to hide skeleton
+    console.error(`Failed to load image for item: ${id}`);
   };
 
   return (
@@ -28,16 +35,28 @@ export const Grid = ({ data, category }: GridProps) => {
           <div key={item.id} className={styles.gridItem} role="listitem">
             <div className={styles.imageWrapper}>
               {!loadedImages.has(String(item.id)) && <SkeletonImage />}
-              <img
-                src={item.imageUrl}
-                alt={translatedTitle}
-                className={styles.image}
-                loading="lazy"
-                onLoad={() => handleImageLoad(item.id)}
-                style={{
-                  display: loadedImages.has(String(item.id)) ? 'block' : 'none',
-                }}
-              />
+              {!errorImages.has(String(item.id)) ? (
+                <img
+                  src={item.imageUrl}
+                  alt={translatedTitle}
+                  className={styles.image}
+                  loading="lazy"
+                  onLoad={() => handleImageLoad(item.id)}
+                  onError={() => handleImageError(item.id)}
+                  style={{
+                    display: loadedImages.has(String(item.id)) ? 'block' : 'none',
+                  }}
+                />
+              ) : (
+                <div className={styles.errorPlaceholder} role="img" aria-label={`Image not available: ${translatedTitle}`}>
+                  <svg className={styles.errorIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                  <span className={styles.errorText}>Image unavailable</span>
+                </div>
+              )}
             </div>
             {translatedTitle && <h3 className={styles.title}>{translatedTitle}</h3>}
             {translatedDescription && (

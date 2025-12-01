@@ -15,6 +15,8 @@ export const AboutMe = () => {
               src="/rayoalmar/images/flor-guzman.jpg"
               alt="Flor Guzman - Photographer and Art Director"
               className={styles.photo}
+              width="800"
+              height="800"
               loading="lazy"
             />
           </div>
