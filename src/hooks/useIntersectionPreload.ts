@@ -40,4 +40,3 @@ export const useIntersectionPreload = (threshold = 0.5) => {
 
   return observerRef;
 };
-

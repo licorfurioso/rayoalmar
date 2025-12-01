@@ -16,7 +16,6 @@ export interface ContentItem {
   order: number;
 }
 
-
 /**
  * Props for the VideoPlayer component
  */
@@ -28,4 +27,3 @@ export interface VideoPlayerProps {
   /** Optional description of the video */
   description?: string;
 }
-

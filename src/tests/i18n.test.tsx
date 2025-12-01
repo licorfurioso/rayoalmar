@@ -22,35 +22,33 @@ const testI18n = i18n.createInstance();
 describe('Internationalization Tests', () => {
   beforeAll(async () => {
     // Initialize i18n for tests with direct resources
-    await testI18n
-      .use(initReactI18next)
-      .init({
-        lng: 'en',
-        fallbackLng: 'en',
-        supportedLngs: ['en', 'es'],
-        ns: ['common', 'navigation', 'sections', 'content'],
-        defaultNS: 'common',
-        resources: {
-          en: {
-            common: enCommon,
-            navigation: enNavigation,
-            sections: enSections,
-            content: enContent,
-          },
-          es: {
-            common: esCommon,
-            navigation: esNavigation,
-            sections: esSections,
-            content: esContent,
-          },
+    await testI18n.use(initReactI18next).init({
+      lng: 'en',
+      fallbackLng: 'en',
+      supportedLngs: ['en', 'es'],
+      ns: ['common', 'navigation', 'sections', 'content'],
+      defaultNS: 'common',
+      resources: {
+        en: {
+          common: enCommon,
+          navigation: enNavigation,
+          sections: enSections,
+          content: enContent,
         },
-        interpolation: {
-          escapeValue: false,
+        es: {
+          common: esCommon,
+          navigation: esNavigation,
+          sections: esSections,
+          content: esContent,
         },
-        react: {
-          useSuspense: false,
-        },
-      });
+      },
+      interpolation: {
+        escapeValue: false,
+      },
+      react: {
+        useSuspense: false,
+      },
+    });
   });
 
   beforeEach(async () => {
@@ -223,8 +221,12 @@ describe('Internationalization Tests', () => {
     });
 
     it('should have matching keys between English and Spanish', () => {
-      const enKeys = Object.keys(testI18n.getResourceBundle('en', 'navigation'));
-      const esKeys = Object.keys(testI18n.getResourceBundle('es', 'navigation'));
+      const enKeys = Object.keys(
+        testI18n.getResourceBundle('en', 'navigation')
+      );
+      const esKeys = Object.keys(
+        testI18n.getResourceBundle('es', 'navigation')
+      );
 
       expect(enKeys).toEqual(esKeys);
     });
@@ -234,7 +236,9 @@ describe('Internationalization Tests', () => {
 
       // Check that portfolio items have proper titles, not keys
       expect(enContent.photoSessions['ps-1'].title).not.toMatch(/^ps-/);
-      expect(enContent.photoSessions['ps-1'].title).toBe('Portrait Session 2024');
+      expect(enContent.photoSessions['ps-1'].title).toBe(
+        'Portrait Session 2024'
+      );
     });
   });
 
@@ -287,10 +291,14 @@ describe('Internationalization Tests', () => {
     });
 
     it('should translate content keys correctly', async () => {
-      expect(testI18n.t('content:photoSessions.ps-1.title')).toBe('Portrait Session 2024');
+      expect(testI18n.t('content:photoSessions.ps-1.title')).toBe(
+        'Portrait Session 2024'
+      );
 
       await testI18n.changeLanguage('es');
-      expect(testI18n.t('content:photoSessions.ps-1.title')).toBe('Sesión de Retrato 2024');
+      expect(testI18n.t('content:photoSessions.ps-1.title')).toBe(
+        'Sesión de Retrato 2024'
+      );
     });
 
     it('should fallback to key for missing translations', async () => {
@@ -302,4 +310,3 @@ describe('Internationalization Tests', () => {
     });
   });
 });
-

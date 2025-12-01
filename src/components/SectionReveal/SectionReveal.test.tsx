@@ -24,7 +24,7 @@ describe('SectionReveal Component', () => {
     expect(wrapperDiv.className).toContain('sectionReveal');
 
     // Wait for IntersectionObserver to trigger (setupTests.ts uses setTimeout)
-    await new Promise(resolve => setTimeout(resolve, 10));
+    await new Promise((resolve) => setTimeout(resolve, 10));
 
     // The 'revealed' class is applied when IntersectionObserver triggers
     expect(wrapperDiv.className).toContain('revealed');
@@ -57,4 +57,3 @@ describe('SectionReveal Component', () => {
     expect(true).toBe(true);
   });
 });
-

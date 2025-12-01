@@ -106,4 +106,3 @@ describe('PhotoSessions Section', () => {
     expect(heading).toHaveTextContent('Photo Sessions');
   });
 });
-

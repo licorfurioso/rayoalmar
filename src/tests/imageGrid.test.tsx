@@ -85,4 +85,3 @@ describe('Image Grid Lazy Loading Integration', () => {
     expect(screen.getByAltText('Test Shoot 1')).toBeInTheDocument();
   });
 });
-

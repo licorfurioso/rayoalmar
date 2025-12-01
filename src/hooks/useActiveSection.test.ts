@@ -47,9 +47,12 @@ describe('useActiveSection Hook', () => {
     const { result } = renderHook(() => useActiveSection(sectionIds));
 
     // Wait for IntersectionObserver to process
-    await waitFor(() => {
-      expect(result.current).toBeTruthy();
-    }, { timeout: 100 });
+    await waitFor(
+      () => {
+        expect(result.current).toBeTruthy();
+      },
+      { timeout: 100 }
+    );
   });
 
   it('cleanup unobserves elements on unmount', () => {
@@ -65,4 +68,3 @@ describe('useActiveSection Hook', () => {
     expect(true).toBe(true);
   });
 });
-

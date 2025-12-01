@@ -32,7 +32,9 @@ describe('Grid Component', () => {
       </I18nextProvider>
     );
 
-    const gridContainer = screen.getByRole('list', { name: /photo-sessions gallery/i });
+    const gridContainer = screen.getByRole('list', {
+      name: /photo-sessions gallery/i,
+    });
     expect(gridContainer).toBeInTheDocument();
   });
 
@@ -72,4 +74,3 @@ describe('Grid Component', () => {
     expect(gridContainer.children.length).toBe(0);
   });
 });
-

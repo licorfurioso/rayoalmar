@@ -106,4 +106,3 @@ describe('Shoots Section', () => {
     expect(heading).toHaveTextContent('Shoots');
   });
 });
-

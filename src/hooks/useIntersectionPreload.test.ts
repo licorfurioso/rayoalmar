@@ -50,4 +50,3 @@ describe('useIntersectionPreload Hook', () => {
     expect(disconnectSpy).toHaveBeenCalled();
   });
 });
-

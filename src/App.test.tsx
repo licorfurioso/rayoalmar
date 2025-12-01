@@ -49,4 +49,3 @@ describe('App Integration Tests', () => {
     expect(screen.getByText('ES')).toBeInTheDocument();
   });
 });
-

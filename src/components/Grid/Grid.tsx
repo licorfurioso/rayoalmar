@@ -48,43 +48,61 @@ export const Grid = ({ data, category }: GridProps) => {
     <div className={styles.grid} role="list" aria-label={`${category} gallery`}>
       {data.map((item, index) => {
         // Get translated title and description, fallback to original if translation missing
-        const translatedTitle = category ? t(`${category}.${item.id}.title`, item.title) : item.title;
-        const translatedDescription = category ? t(`${category}.${item.id}.description`, item.description || '') : item.description;
+        const translatedTitle = category
+          ? t(`${category}.${item.id}.title`, item.title)
+          : item.title;
+        const translatedDescription = category
+          ? t(`${category}.${item.id}.description`, item.description || '')
+          : item.description;
 
         return (
           <GridItemWrapper key={item.id} index={index}>
             <div className={styles.gridItem} role="listitem">
-            <div className={styles.imageWrapper}>
-              {!loadedImages.has(String(item.id)) && <SkeletonImage />}
-              {!errorImages.has(String(item.id)) ? (
-                <img
-                  src={item.imageUrl}
-                  alt={translatedTitle}
-                  className={styles.image}
-                  loading="lazy"
-                  onLoad={() => handleImageLoad(item.id)}
-                  onError={() => handleImageError(item.id)}
-                  style={{
-                    opacity: loadedImages.has(String(item.id)) ? 1 : 0,
-                    visibility: loadedImages.has(String(item.id)) ? 'visible' : 'hidden',
-                  }}
-                />
-              ) : (
-                <div className={styles.errorPlaceholder} role="img" aria-label={`Image not available: ${translatedTitle}`}>
-                  <svg className={styles.errorIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                  <span className={styles.errorText}>Image unavailable</span>
-                </div>
+              <div className={styles.imageWrapper}>
+                {!loadedImages.has(String(item.id)) && <SkeletonImage />}
+                {!errorImages.has(String(item.id)) ? (
+                  <img
+                    src={item.imageUrl}
+                    alt={translatedTitle}
+                    className={styles.image}
+                    loading="lazy"
+                    onLoad={() => handleImageLoad(item.id)}
+                    onError={() => handleImageError(item.id)}
+                    style={{
+                      opacity: loadedImages.has(String(item.id)) ? 1 : 0,
+                      visibility: loadedImages.has(String(item.id))
+                        ? 'visible'
+                        : 'hidden',
+                    }}
+                  />
+                ) : (
+                  <div
+                    className={styles.errorPlaceholder}
+                    role="img"
+                    aria-label={`Image not available: ${translatedTitle}`}
+                  >
+                    <svg
+                      className={styles.errorIcon}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <span className={styles.errorText}>Image unavailable</span>
+                  </div>
+                )}
+              </div>
+              {translatedTitle && (
+                <h3 className={styles.title}>{translatedTitle}</h3>
               )}
-            </div>
-            {translatedTitle && <h3 className={styles.title}>{translatedTitle}</h3>}
-            {translatedDescription && (
-              <p className={styles.description}>{translatedDescription}</p>
-            )}
-            {item.date && <time className={styles.date}>{item.date}</time>}
+              {translatedDescription && (
+                <p className={styles.description}>{translatedDescription}</p>
+              )}
+              {item.date && <time className={styles.date}>{item.date}</time>}
             </div>
           </GridItemWrapper>
         );
@@ -92,4 +110,3 @@ export const Grid = ({ data, category }: GridProps) => {
     </div>
   );
 };
-

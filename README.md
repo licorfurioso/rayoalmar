@@ -8,7 +8,6 @@ A modern, minimal portfolio website for Flor Guzman showcasing photography, shoo
 
 Visit the live site: [https://rayoalmar.com](https://rayoalmar.com)
 
-
 ## Tech Stack
 
 - **Framework**: React 19+ with TypeScript 5+
@@ -55,17 +54,20 @@ rayoalmar/
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/username/rayoalmar.git
 cd rayoalmar
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -91,32 +93,38 @@ This project uses Vitest and React Testing Library for comprehensive test covera
 ### Running Tests
 
 **Run all tests:**
+
 ```bash
 npm run test
 ```
 
 **Run tests in watch mode (for development):**
+
 ```bash
 npm run test -- --watch
 ```
 
 **Run tests with UI:**
+
 ```bash
 npm run test:ui
 ```
 
 **Generate coverage report:**
+
 ```bash
 npm run test:coverage
 ```
 
 The coverage report will be available in:
+
 - Terminal output (text format)
 - `coverage/index.html` (detailed HTML report)
 
 ### Test Structure
 
 Tests are organized alongside their source files:
+
 - **Component tests**: `src/components/[Component]/[Component].test.tsx`
 - **Section tests**: `src/sections/[Section]/[Section].test.tsx`
 - **Hook tests**: `src/hooks/[hookName].test.ts`
@@ -128,6 +136,7 @@ Tests are organized alongside their source files:
 Follow these patterns when writing tests:
 
 1. **Component Tests** - Test rendering and basic interactions:
+
 ```typescript
 import { render, screen } from '@testing-library/react';
 import { MyComponent } from './MyComponent';
@@ -139,6 +148,7 @@ it('renders component with props', () => {
 ```
 
 2. **Hook Tests** - Use `renderHook` utility:
+
 ```typescript
 import { renderHook } from '@testing-library/react';
 import { useMyHook } from './useMyHook';
@@ -150,6 +160,7 @@ it('returns expected values', () => {
 ```
 
 3. **Integration Tests** - Test multiple components working together:
+
 ```typescript
 import { render, fireEvent } from '@testing-library/react';
 import App from '../App';
@@ -184,12 +195,14 @@ Fixtures are located in `src/tests/fixtures/` and mirror the structure of produc
 The project uses a comprehensive design system with CSS custom properties:
 
 ### Colors
+
 - Background: `#ffffff`
 - Text: `#1a1a1a`
 - Accent: `#2c2c2c`
 - Hover: `#000000`
 
 ### Spacing Scale
+
 - XS: 4px
 - SM: 8px
 - MD: 16px
@@ -198,11 +211,13 @@ The project uses a comprehensive design system with CSS custom properties:
 - 2XL: 96px
 
 ### Typography
+
 - Base Font: System font stack
 - Heading Font: Georgia, serif
 - Responsive font sizes with mobile-first approach
 
 ### Breakpoints
+
 - Mobile: 320px - 767px
 - Tablet: 768px - 1024px
 - Desktop: 1025px+
@@ -217,6 +232,7 @@ The project uses Vitest and React Testing Library for testing. Tests are focused
 - Navigation flow (click → scroll → active state update)
 
 Run tests with:
+
 ```bash
 npm run test
 ```
@@ -269,4 +285,3 @@ This project is private and all rights are reserved.
 ---
 
 Built with ❤️ using React, TypeScript, and Vite
-

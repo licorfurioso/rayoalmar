@@ -28,4 +28,3 @@ export const mockPhotoSessions = [
     order: 3,
   },
 ];
-

@@ -14,16 +14,23 @@ describe('useScrollReveal Hook', () => {
     // The hook manages its own ref internally, so we test it by rendering with a component
     const TestComponent = () => {
       const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
-      return <div ref={ref} data-visible={isVisible}>Test</div>;
+      return (
+        <div ref={ref} data-visible={isVisible}>
+          Test
+        </div>
+      );
     };
 
     const { container } = render(<TestComponent />);
     const element = container.firstChild as HTMLElement;
 
     // Wait for IntersectionObserver to trigger (setupTests.ts triggers automatically)
-    await waitFor(() => {
-      expect(element.getAttribute('data-visible')).toBe('true');
-    }, { timeout: 100 });
+    await waitFor(
+      () => {
+        expect(element.getAttribute('data-visible')).toBe('true');
+      },
+      { timeout: 100 }
+    );
   });
 
   it('IntersectionObserver integration works correctly', () => {
@@ -48,4 +55,3 @@ describe('useScrollReveal Hook', () => {
     document.body.removeChild(mockElement);
   });
 });
-

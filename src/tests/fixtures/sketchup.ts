@@ -28,4 +28,3 @@ export const mockSketchup = [
     order: 3,
   },
 ];
-

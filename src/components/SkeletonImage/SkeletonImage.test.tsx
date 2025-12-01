@@ -36,4 +36,3 @@ describe('SkeletonImage Component', () => {
     expect(skeletonDiv.className).toContain('skeleton');
   });
 });
-

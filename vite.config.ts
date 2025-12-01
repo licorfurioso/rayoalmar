@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitest/config'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,7 +15,12 @@ export default defineConfig({
           // Split React vendor code
           'react-vendor': ['react', 'react-dom'],
           // Split i18n vendor code
-          'i18n-vendor': ['react-i18next', 'i18next', 'i18next-http-backend', 'i18next-browser-languagedetector'],
+          'i18n-vendor': [
+            'react-i18next',
+            'i18next',
+            'i18next-http-backend',
+            'i18next-browser-languagedetector',
+          ],
         },
       },
     },
@@ -46,4 +51,4 @@ export default defineConfig({
       },
     },
   },
-})
+});

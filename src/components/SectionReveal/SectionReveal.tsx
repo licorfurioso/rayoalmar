@@ -9,9 +9,11 @@ export const SectionReveal = ({ children }: SectionRevealProps) => {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.05 });
 
   return (
-    <div ref={ref} className={`${styles.sectionReveal} ${isVisible ? styles.revealed : ''}`}>
+    <div
+      ref={ref}
+      className={`${styles.sectionReveal} ${isVisible ? styles.revealed : ''}`}
+    >
       {children}
     </div>
   );
 };
-

@@ -24,4 +24,3 @@ describe('i18n Configuration', () => {
     expect(i18n.options.supportedLngs).toContain('es');
   });
 });
-

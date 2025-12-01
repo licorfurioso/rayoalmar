@@ -11,4 +11,3 @@ export const SkeletonImage = ({ className }: SkeletonImageProps) => {
     </div>
   );
 };
-

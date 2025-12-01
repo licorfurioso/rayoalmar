@@ -15,7 +15,7 @@ testI18n.use(initReactI18next).init({
       sections: {
         aboutMe: 'About Me',
         aboutMeContent: 'Test bio content in English',
-        aboutMeContactCTA: 'Let\'s work together!',
+        aboutMeContactCTA: "Let's work together!",
         aboutMeContact: 'Contact',
       },
     },
@@ -52,7 +52,9 @@ describe('AboutMe Section', () => {
       </I18nextProvider>
     );
 
-    const photo = screen.getByAltText('Flor Guzman - Photographer and Art Director');
+    const photo = screen.getByAltText(
+      'Flor Guzman - Photographer and Art Director'
+    );
     expect(photo).toBeInTheDocument();
     expect(photo).toHaveAttribute('src', '/rayoalmar/images/flor-guzman.jpg');
   });
@@ -65,7 +67,7 @@ describe('AboutMe Section', () => {
     );
 
     expect(screen.getByText('Test bio content in English')).toBeInTheDocument();
-    expect(screen.getByText('Let\'s work together!')).toBeInTheDocument();
+    expect(screen.getByText("Let's work together!")).toBeInTheDocument();
   });
 
   it('contact information displays', () => {
@@ -77,7 +79,10 @@ describe('AboutMe Section', () => {
 
     const emailLink = screen.getByText('florenciadelcguzman@gmail.com');
     expect(emailLink).toBeInTheDocument();
-    expect(emailLink).toHaveAttribute('href', 'mailto:florenciadelcguzman@gmail.com?subject=Portfolio%20Inquiry');
+    expect(emailLink).toHaveAttribute(
+      'href',
+      'mailto:florenciadelcguzman@gmail.com?subject=Portfolio%20Inquiry'
+    );
 
     const instagramLink = screen.getByLabelText('Instagram Profile');
     expect(instagramLink).toBeInTheDocument();
@@ -104,7 +109,8 @@ describe('AboutMe Section', () => {
     );
 
     expect(screen.getByText('Sobre Mí')).toBeInTheDocument();
-    expect(screen.getByText('Contenido de biografía de prueba en español')).toBeInTheDocument();
+    expect(
+      screen.getByText('Contenido de biografía de prueba en español')
+    ).toBeInTheDocument();
   });
 });
-

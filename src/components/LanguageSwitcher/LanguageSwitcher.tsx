@@ -10,7 +10,11 @@ export const LanguageSwitcher = () => {
   };
 
   return (
-    <div className={styles.languageSwitcher} role="group" aria-label="Language switcher">
+    <div
+      className={styles.languageSwitcher}
+      role="group"
+      aria-label="Language switcher"
+    >
       <button
         onClick={() => changeLanguage('en')}
         className={`${styles.languageButton} ${currentLanguage === 'en' ? styles.active : ''}`}
@@ -19,7 +23,9 @@ export const LanguageSwitcher = () => {
       >
         EN
       </button>
-      <span className={styles.separator} aria-hidden="true">|</span>
+      <span className={styles.separator} aria-hidden="true">
+        |
+      </span>
       <button
         onClick={() => changeLanguage('es')}
         className={`${styles.languageButton} ${currentLanguage === 'es' ? styles.active : ''}`}
@@ -31,4 +37,3 @@ export const LanguageSwitcher = () => {
     </div>
   );
 };
-

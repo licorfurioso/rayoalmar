@@ -104,4 +104,3 @@ describe('Sketchup Section', () => {
     expect(heading).toHaveTextContent('Sketchup');
   });
 });
-

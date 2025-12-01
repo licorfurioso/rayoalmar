@@ -32,7 +32,8 @@ describe('VideoPlayer Component', () => {
   it('has proper accessibility labels', () => {
     render(<VideoPlayer {...mockProps} />);
 
-    expect(screen.getByLabelText('Video: Test Video Title')).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('Video: Test Video Title')
+    ).toBeInTheDocument();
   });
 });
-

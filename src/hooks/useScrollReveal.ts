@@ -15,7 +15,9 @@ export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
     if (!element) return;
 
     // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
     // If reduced motion is preferred, show immediately
     if (prefersReducedMotion) {
@@ -50,4 +52,3 @@ export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
 
   return { ref, isVisible };
 };
-

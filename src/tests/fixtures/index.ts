@@ -13,4 +13,3 @@
 export { mockPhotoSessions } from './photoSessions';
 export { mockShoots } from './shoots';
 export { mockSketchup } from './sketchup';
-

@@ -28,4 +28,3 @@ export const mockShoots = [
     order: 3,
   },
 ];
-

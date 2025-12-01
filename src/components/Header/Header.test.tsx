@@ -83,4 +83,3 @@ describe('Header Component', () => {
     expect(screen.getByText('ES')).toBeInTheDocument();
   });
 });
-

@@ -58,11 +58,19 @@ describe('useHeaderVisibility Hook', () => {
 
     unmount();
 
-    expect(removeEventListenerSpy).toHaveBeenCalledWith('mousemove', expect.any(Function));
-    expect(removeEventListenerSpy).toHaveBeenCalledWith('touchstart', expect.any(Function));
-    expect(removeEventListenerSpy).toHaveBeenCalledWith('scroll', expect.any(Function));
+    expect(removeEventListenerSpy).toHaveBeenCalledWith(
+      'mousemove',
+      expect.any(Function)
+    );
+    expect(removeEventListenerSpy).toHaveBeenCalledWith(
+      'touchstart',
+      expect.any(Function)
+    );
+    expect(removeEventListenerSpy).toHaveBeenCalledWith(
+      'scroll',
+      expect.any(Function)
+    );
 
     removeEventListenerSpy.mockRestore();
   });
 });
-
