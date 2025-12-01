@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { SectionReveal } from '../../components/SectionReveal/SectionReveal';
 import styles from './AboutMe.module.css';
 
 export const AboutMe = () => {
@@ -6,10 +7,11 @@ export const AboutMe = () => {
 
   return (
     <section id="about-me" className={styles.section} aria-label={t('aboutMe')}>
-      <div className={styles.content}>
-        <h2>{t('aboutMe')}</h2>
+      <SectionReveal>
+        <div className={styles.content}>
+          <h2>{t('aboutMe')}</h2>
 
-        <div className={styles.aboutContainer}>
+          <div className={styles.aboutContainer}>
           <div className={styles.photoContainer}>
             <img
               src="/rayoalmar/images/flor-guzman.jpg"
@@ -64,7 +66,8 @@ export const AboutMe = () => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      </SectionReveal>
     </section>
   );
 };

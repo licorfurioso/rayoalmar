@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Grid } from '../../components/Grid/Grid';
+import { SectionReveal } from '../../components/SectionReveal/SectionReveal';
 import type { ContentItem } from '../../types/content';
 import sketchupDataRaw from '../../data/sketchup.json';
 import styles from './Sketchup.module.css';
@@ -17,10 +18,12 @@ export const Sketchup = () => {
       className={styles.section}
       aria-label={t('sketchup')}
     >
-      <div className={styles.content}>
-        <h2>{t('sketchup')}</h2>
-        <Grid data={sortedData} category="sketchup" />
-      </div>
+      <SectionReveal>
+        <div className={styles.content}>
+          <h2>{t('sketchup')}</h2>
+          <Grid data={sortedData} category="sketchup" />
+        </div>
+      </SectionReveal>
     </section>
   );
 };

@@ -2,12 +2,32 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ContentItem } from '../../types/content';
 import { SkeletonImage } from '../SkeletonImage/SkeletonImage';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import styles from './Grid.module.css';
 
 interface GridProps {
   data: ContentItem[];
   category?: string;
 }
+
+interface GridItemWrapperProps {
+  children: React.ReactNode;
+  index: number;
+}
+
+const GridItemWrapper = ({ children, index }: GridItemWrapperProps) => {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+
+  return (
+    <div
+      ref={ref}
+      className={`${styles.gridItemWrapper} ${isVisible ? styles.revealed : ''}`}
+      style={{ transitionDelay: `${index * 50}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
 
 export const Grid = ({ data, category }: GridProps) => {
   const { t } = useTranslation('content');
@@ -26,13 +46,14 @@ export const Grid = ({ data, category }: GridProps) => {
 
   return (
     <div className={styles.grid} role="list" aria-label={`${category} gallery`}>
-      {data.map((item) => {
+      {data.map((item, index) => {
         // Get translated title and description, fallback to original if translation missing
         const translatedTitle = category ? t(`${category}.${item.id}.title`, item.title) : item.title;
         const translatedDescription = category ? t(`${category}.${item.id}.description`, item.description || '') : item.description;
 
         return (
-          <div key={item.id} className={styles.gridItem} role="listitem">
+          <GridItemWrapper key={item.id} index={index}>
+            <div className={styles.gridItem} role="listitem">
             <div className={styles.imageWrapper}>
               {!loadedImages.has(String(item.id)) && <SkeletonImage />}
               {!errorImages.has(String(item.id)) ? (
@@ -63,7 +84,8 @@ export const Grid = ({ data, category }: GridProps) => {
               <p className={styles.description}>{translatedDescription}</p>
             )}
             {item.date && <time className={styles.date}>{item.date}</time>}
-          </div>
+            </div>
+          </GridItemWrapper>
         );
       })}
     </div>

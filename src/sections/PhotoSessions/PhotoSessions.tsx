@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Grid } from '../../components/Grid/Grid';
+import { SectionReveal } from '../../components/SectionReveal/SectionReveal';
 import type { ContentItem } from '../../types/content';
 import photoSessionsDataRaw from '../../data/photoSessions.json';
 import styles from './PhotoSessions.module.css';
@@ -17,10 +18,12 @@ export const PhotoSessions = () => {
       className={styles.section}
       aria-label={t('photoSessions')}
     >
-      <div className={styles.content}>
-        <h2>{t('photoSessions')}</h2>
-        <Grid data={sortedData} category="photoSessions" />
-      </div>
+      <SectionReveal>
+        <div className={styles.content}>
+          <h2>{t('photoSessions')}</h2>
+          <Grid data={sortedData} category="photoSessions" />
+        </div>
+      </SectionReveal>
     </section>
   );
 };
