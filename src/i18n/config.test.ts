@@ -1,6 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import i18n from './config';
 
+interface BackendOptions {
+  loadPath: string;
+}
+
 describe('i18n Configuration', () => {
   it('exports i18n instance', () => {
     expect(i18n).toBeDefined();
@@ -25,7 +29,7 @@ describe('i18n Configuration', () => {
   });
 
   it('has correct backend loadPath configuration', () => {
-    expect((i18n.options.backend as any)?.loadPath).toBe(
+    expect((i18n.options.backend as BackendOptions)?.loadPath).toBe(
       '/rayoalmar/locales/{{lng}}/{{ns}}.json'
     );
   });
