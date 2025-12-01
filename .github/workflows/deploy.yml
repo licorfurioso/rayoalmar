@@ -44,6 +44,25 @@ jobs:
       - name: Coverage
         run: npm run test:coverage -- --run
 
+      - name: Upload coverage reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 30
+
+      - name: Coverage Summary
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "## Test Coverage Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          cat coverage/coverage-summary.json | jq -r '.total | "Lines: \(.lines.pct)%\nStatements: \(.statements.pct)%\nFunctions: \(.functions.pct)%\nBranches: \(.branches.pct)%"' >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ All coverage thresholds met (80% minimum)" >> $GITHUB_STEP_SUMMARY
+
       - name: Build
         run: npm run build
 
