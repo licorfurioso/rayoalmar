@@ -1,41 +1,31 @@
 [
   {
     "id": "sketch-1",
-    "title": "Architectural Design",
     "imageUrl": "/images/sketchup/sketchup-01.svg",
-    "description": "Modern architectural visualization",
     "date": "2024-11-05",
     "order": 1
   },
   {
     "id": "sketch-2",
-    "title": "Interior Concept",
     "imageUrl": "/images/sketchup/sketchup-02.svg",
-    "description": "Interior design rendering",
     "date": "2024-10-12",
     "order": 2
   },
   {
     "id": "sketch-3",
-    "title": "Urban Planning",
     "imageUrl": "/images/sketchup/sketchup-03.svg",
-    "description": "Urban development visualization",
     "date": "2024-09-18",
     "order": 3
   },
   {
     "id": "sketch-4",
-    "title": "Landscape Design",
     "imageUrl": "/images/sketchup/sketchup-04.svg",
-    "description": "Landscape architecture rendering",
     "date": "2024-08-25",
     "order": 4
   },
   {
     "id": "sketch-5",
-    "title": "3D Modeling",
     "imageUrl": "/images/sketchup/sketchup-05.svg",
-    "description": "Detailed 3D architectural model",
     "date": "2024-07-14",
     "order": 5
   }

@@ -1,41 +1,31 @@
 [
   {
     "id": "ps-1",
-    "title": "Portrait Session 2024",
     "imageUrl": "/images/photo-sessions/photo-session-01.svg",
-    "description": "Professional portrait photography session",
     "date": "2024-11-15",
     "order": 1
   },
   {
     "id": "ps-2",
-    "title": "Family Moments",
     "imageUrl": "/images/photo-sessions/photo-session-02.svg",
-    "description": "Capturing precious family memories",
     "date": "2024-10-20",
     "order": 2
   },
   {
     "id": "ps-3",
-    "title": "Outdoor Session",
     "imageUrl": "/images/photo-sessions/photo-session-03.svg",
-    "description": "Natural light outdoor photography",
     "date": "2024-09-05",
     "order": 3
   },
   {
     "id": "ps-4",
-    "title": "Studio Portraits",
     "imageUrl": "/images/photo-sessions/photo-session-04.svg",
-    "description": "Professional studio portrait session",
     "date": "2024-08-12",
     "order": 4
   },
   {
     "id": "ps-5",
-    "title": "Lifestyle Photography",
     "imageUrl": "/images/photo-sessions/photo-session-05.svg",
-    "description": "Candid lifestyle photo session",
     "date": "2024-07-28",
     "order": 5
   }

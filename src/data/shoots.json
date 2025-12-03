@@ -1,41 +1,31 @@
 [
   {
     "id": "shoot-1",
-    "title": "Commercial Shoot",
     "imageUrl": "/images/shoots/shoot-01.svg",
-    "description": "Professional commercial photography",
     "date": "2024-11-10",
     "order": 1
   },
   {
     "id": "shoot-2",
-    "title": "Editorial Fashion",
     "imageUrl": "/images/shoots/shoot-02.svg",
-    "description": "Fashion editorial shoot for magazine",
     "date": "2024-10-15",
     "order": 2
   },
   {
     "id": "shoot-3",
-    "title": "Product Photography",
     "imageUrl": "/images/shoots/shoot-03.svg",
-    "description": "High-end product photography",
     "date": "2024-09-22",
     "order": 3
   },
   {
     "id": "shoot-4",
-    "title": "Event Coverage",
     "imageUrl": "/images/shoots/shoot-04.svg",
-    "description": "Professional event photography",
     "date": "2024-08-30",
     "order": 4
   },
   {
     "id": "shoot-5",
-    "title": "Artistic Concept",
     "imageUrl": "/images/shoots/shoot-05.svg",
-    "description": "Creative concept photography shoot",
     "date": "2024-07-18",
     "order": 5
   }
