@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 
 export const useActiveSection = (sectionIds: string[]) => {
   const [activeSection, setActiveSection] = useState<string>('');
-  const intersectingRefs = useRef<Map<string, IntersectionObserverEntry>>(new Map());
+  const intersectingRefs = useRef<Map<string, IntersectionObserverEntry>>(
+    new Map()
+  );
 
   useEffect(() => {
     const observerOptions = {
