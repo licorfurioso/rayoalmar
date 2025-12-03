@@ -56,7 +56,7 @@ describe('AboutMe Section', () => {
       'Flor Guzman - Photographer and Art Director'
     );
     expect(photo).toBeInTheDocument();
-    expect(photo).toHaveAttribute('src', '/rayoalmar/images/flor-guzman.jpg');
+    expect(photo).toHaveAttribute('src', '/images/flor-guzman.jpg');
   });
 
   it('biography content renders', () => {

@@ -30,7 +30,7 @@ describe('i18n Configuration', () => {
 
   it('has correct backend loadPath configuration', () => {
     expect((i18n.options.backend as BackendOptions)?.loadPath).toBe(
-      '/rayoalmar/locales/{{lng}}/{{ns}}.json'
+      '/locales/{{lng}}/{{ns}}.json'
     );
   });
 
