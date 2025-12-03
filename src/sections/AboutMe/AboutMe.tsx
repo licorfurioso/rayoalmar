@@ -14,7 +14,7 @@ export const AboutMe = () => {
           <div className={styles.aboutContainer}>
             <div className={styles.photoContainer}>
               <img
-                src="/rayoalmar/images/flor-guzman.jpg"
+                src="/images/flor-guzman.jpg"
                 alt="Flor Guzman - Photographer and Art Director"
                 className={styles.photo}
                 width="800"

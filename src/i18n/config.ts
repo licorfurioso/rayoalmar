@@ -33,7 +33,7 @@ i18n
 
     // Backend configuration for loading translation files
     backend: {
-      loadPath: '/rayoalmar/locales/{{lng}}/{{ns}}.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
 
     // Interpolation configuration
