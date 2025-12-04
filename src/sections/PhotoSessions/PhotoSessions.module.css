@@ -1,13 +1,13 @@
 .section {
   min-height: 400px;
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-2xl) 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .content {
-  max-width: var(--max-width-container);
+  padding: 0 var(--space-lg);
   width: 100%;
   text-align: center;
 }

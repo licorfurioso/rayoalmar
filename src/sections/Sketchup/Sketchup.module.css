@@ -7,7 +7,6 @@
 }
 
 .content {
-  max-width: var(--max-width-container);
   width: 100%;
   text-align: center;
 }

@@ -1,6 +1,6 @@
 # Flor Guzman Portfolio
 
-![Build Status](https://github.com/username/rayoalmar/actions/workflows/deploy.yml/badge.svg)
+![Build Status](https://github.com/licorfurioso/rayoalmar/actions/workflows/deploy.yml/badge.svg)
 
 A modern, minimal portfolio website for Flor Guzman showcasing photography, shoots, sketchup drawings, and personal information.
 
@@ -56,7 +56,7 @@ rayoalmar/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/username/rayoalmar.git
+git clone https://github.com/licorfurioso/rayoalmar.git
 cd rayoalmar
 ```
 
